@@ -36,11 +36,9 @@ function check() {
                     const pusher = new PushBullet(config.pushbullet);
 
                     pusher.devices({limit: 10}, function (error, response) {
-                        for (let device in response.devices) {
-                            pusher.note(device.iden, 'Bittrex order', 'Un changement a eu lieu', function (error, response) {
+                        pusher.note('', 'Bittrex order', 'Un order est passé', function (error, response) {
 
-                            });
-                        }
+                        });
                     });
                 });
             }
